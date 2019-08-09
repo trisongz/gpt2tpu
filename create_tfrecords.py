@@ -10,14 +10,14 @@ from tqdm import tqdm
 
 import encoder
 
-#base_dir = "gs://kmcg-mrk-ml/data/training" # Path to where your .txt files are located
-files_per = 175000 # 175000 ~ 200-300MB
-#name = "mrkt-train" # Name of output files will be name_i.tfrecords where i is the number of the file
-#output_dir = "gs://kmcg-mrk-ml/data/generated"
+base_dir = "/content/drive/My Drive/ColabData" # Path to where your .txt files are located
+files_per = 2 # 175000 ~ 200-300MB
+name = "mrkt-train" # Name of output files will be name_i.tfrecords where i is the number of the file
+output_dir = "/content/encoded"
 log_dir = "logs"
-files = glob.glob(os.path.join(base_dir, "**/*.txt"))
+files = glob.glob(os.path.join(base_dir, "*.txt"))
 processes = 64 # Number of encoding processes to run
-#encoder_path = "gs://kmcg-mrk-ml/models/encoder" # Path to encoder files
+encoder_path = "gs://kmcg-mrk-ml/models/001-176000" # Path to encoder files
 minimum_size = 128
 
 def _int64_feature(value):
